@@ -385,7 +385,7 @@ static int cdfinger_init_irq(struct cdfingerfp_data *pdata)
 	if (isInit == 1)
 		return 0;
 
-	error = request_irq(gpio_to_irq(pdata->irq_num), cdfinger_eint_handler, IRQF_TRIGGER_RISING, "cdfinger_eint", NULL);
+	error = request_irq(gpio_to_irq(pdata->irq_num), cdfinger_eint_handler, IRQF_TRIGGER_RISING | IRQF_PERF_AFFINE, "cdfinger_eint", NULL);
 	if (error < 0) {
 		CDFINGER_ERR("irq init err\n");
 		return error;
