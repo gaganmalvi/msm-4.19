@@ -77,3 +77,4 @@ static inline int msm_dma_unmap_all_for_dev(struct device *dev)
 
 static inline void msm_dma_buf_freed(void *buffer) {}
 #endif /*CONFIG_QCOM_LAZY_MAPPING*/
+#endif
